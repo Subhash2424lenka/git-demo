@@ -1,0 +1,1157 @@
+dev@dev-ThinkCentre-M93p:~$ cd Desktop/
+dev@dev-ThinkCentre-M93p:~/Desktop$ cd project/
+dev@dev-ThinkCentre-M93p:~/Desktop/project$ git clone git@github.com:Subhash2424lenka/git-demo.git git-demo
+Cloning into 'git-demo'...
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+Receiving objects: 100% (4/4), 4.50 KiB | 2.25 MiB/s, done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+dev@dev-ThinkCentre-M93p:~/Desktop/project$ ls -al
+total 24
+drwxrwxr-x 6 dev dev 4096 Feb 17 16:55 .
+drwxr-xr-x 3 dev dev 4096 Feb 16 16:57 ..
+drwxrwxr-x 3 dev dev 4096 Feb 15 16:27 demo
+drwxrwxr-x 3 dev dev 4096 Feb 17 16:55 git-demo
+drwxrwxr-x 6 dev dev 4096 Feb 16 14:09 starter-web
+drwxrwxr-x 5 dev dev 4096 Feb 16 17:16 website
+dev@dev-ThinkCentre-M93p:~/Desktop/project$ cd git-demo/
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git add remote origin git@github.com:Subhash2424lenka/git-demo.git
+fatal: pathspec 'remote' did not match any files
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git remote origin git@github.com:Subhash2424lenka/git-demo.git
+error: Unknown subcommand: origin
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ remote -v
+Command 'remote' not found, but can be installed with:
+sudo snap install remote
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git init
+Reinitialized existing Git repository in /home/dev/Desktop/project/git-demo/.git/
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git remote add origin git@github.com:Subhash2424lenka/git-demo.git
+error: remote origin already exists.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git remote -v
+origin	git@github.com:Subhash2424lenka/git-demo.git (fetch)
+origin	git@github.com:Subhash2424lenka/git-demo.git (push)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git config --global user.name "UserOne"
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git config user.name "UserTwo"
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git config --get
+error: wrong number of arguments, should be from 1 to 2
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git config --get-all
+error: wrong number of arguments, should be from 1 to 2
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+[1]+  Stopped                 git config --get-all
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git config --local user.name "UserTwo"
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git config --local --list
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=git@github.com:Subhash2424lenka/git-demo.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+user.name=UserTwo
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ ls -al
+total 28
+drwxrwxr-x 3 dev dev  4096 Feb 17 16:55 .
+drwxrwxr-x 6 dev dev  4096 Feb 17 16:55 ..
+drwxrwxr-x 8 dev dev  4096 Feb 17 17:00 .git
+-rw-rw-r-- 1 dev dev 11357 Feb 17 16:55 LICENSE
+-rw-rw-r-- 1 dev dev    10 Feb 17 16:55 README.md
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ vim README.md 
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git add .
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -m "new data added"
+[main e3726b2] new data added
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 307 bytes | 307.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Subhash2424lenka/git-demo.git
+   3d46727..e3726b2  main -> main
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch
+* main
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ vim README.md 
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch -m main stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git bracnh
+git: 'bracnh' is not a git command. See 'git --help'.
+
+The most similar command is
+	branch
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch
+* stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git add .
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -m "new data on read me"
+[stag-base e472493] new data on read me
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push origin stag-base
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 304 bytes | 304.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'stag-base' on GitHub by visiting:
+remote:      https://github.com/Subhash2424lenka/git-demo/pull/new/stag-base
+remote: 
+To github.com:Subhash2424lenka/git-demo.git
+ * [new branch]      stag-base -> stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git pull
+Already up to date.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git bracnh
+git: 'bracnh' is not a git command. See 'git --help'.
+
+The most similar command is
+	branch
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch
+* stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git fetch -all
+error: did you mean `--all` (with two dashes)?
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git fetch --all
+Fetching origin
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git pull
+Already up to date.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git fetch -p
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push origin :main
+To github.com:Subhash2424lenka/git-demo.git
+ - [deleted]         main
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch stag-base
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push
+fatal: The upstream branch of your current branch does not match
+the name of your current branch.  To push to the upstream branch
+on the remote, use
+
+    git push origin HEAD:main
+
+To push to the branch of the same name on the remote, use
+
+    git push origin HEAD
+
+To choose either option permanently, see push.default in 'git help config'.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch -a
+* stag-base
+  remotes/origin/stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch stag-base
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch --unset-upstream
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch stag-base
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> stag-base
+
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git remote -v
+origin	git@github.com:Subhash2424lenka/git-demo.git (fetch)
+origin	git@github.com:Subhash2424lenka/git-demo.git (push)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -m "new data"
+On branch stag-base
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch -a
+* stag-base
+  remotes/origin/stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git fetch -p
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch stag-base
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout -b fix/ui-changes-v1
+Switched to a new branch 'fix/ui-changes-v1'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout stag-base 
+Switched to branch 'stag-base'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout -b fix/ui-changes-v2
+Switched to a new branch 'fix/ui-changes-v2'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout fix/ui-changes-v1
+Switched to branch 'fix/ui-changes-v1'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ vim app.js
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -am "new version file"
+On branch fix/ui-changes-v1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app.js
+
+nothing added to commit but untracked files present (use "git add" to track)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git add .
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -m "new app js file"
+[fix/ui-changes-v1 ef9f898] new app js file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 app.js
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push origin fix/ui-changes-v1
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 328 bytes | 328.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'fix/ui-changes-v1' on GitHub by visiting:
+remote:      https://github.com/Subhash2424lenka/git-demo/pull/new/fix/ui-changes-v1
+remote: 
+To github.com:Subhash2424lenka/git-demo.git
+ * [new branch]      fix/ui-changes-v1 -> fix/ui-changes-v1
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout fix/ui-changes-v3
+error: pathspec 'fix/ui-changes-v3' did not match any file(s) known to git
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout -b  fix/ui-changes-v3
+Switched to a new branch 'fix/ui-changes-v3'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git merge fix/ui-changes-v2
+Already up to date.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch
+  fix/ui-changes-v1
+  fix/ui-changes-v2
+* fix/ui-changes-v3
+  stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout stag-base 
+Switched to branch 'stag-base'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git merge fix/ui-changes-v1
+Updating e472493..ef9f898
+Fast-forward
+ app.js | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 app.js
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout fix/ui-changes-v2
+Switched to branch 'fix/ui-changes-v2'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ vim app.js
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git add .
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -m "new data on v2"
+[fix/ui-changes-v2 3eb798a] new data on v2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 app.js
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push origin fix/ui-changes-v2
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 326 bytes | 326.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'fix/ui-changes-v2' on GitHub by visiting:
+remote:      https://github.com/Subhash2424lenka/git-demo/pull/new/fix/ui-changes-v2
+remote: 
+To github.com:Subhash2424lenka/git-demo.git
+ * [new branch]      fix/ui-changes-v2 -> fix/ui-changes-v2
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> fix/ui-changes-v2
+
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git pull stag-base
+fatal: 'stag-base' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch
+  fix/ui-changes-v1
+* fix/ui-changes-v2
+  fix/ui-changes-v3
+  stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout stag-base 
+Switched to branch 'stag-base'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git merge fix/ui-changes-v2
+Auto-merging app.js
+CONFLICT (add/add): Merge conflict in app.js
+Automatic merge failed; fix conflicts and then commit the result.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+meld opendiff kdiff3 tkdiff xxdiff tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+Merging:
+app.js
+
+Normal merge conflict for 'app.js':
+  {local}: created file
+  {remote}: created file
+Hit return to start merge resolution tool (p4merge): 
+error: invalid path './app_BASE_16087.js'
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git merge fix/ui-changes-v2
+fatal: You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you merge.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -m "my Testing merge"
+[stag-base f404071] my Testing merge
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch stag-base
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app.js.orig
+
+nothing added to commit but untracked files present (use "git add" to track)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git rm *.orig
+fatal: pathspec 'app.js.orig' did not match any files
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ rm -rf  *.orig
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ ls -al
+total 32
+drwxrwxr-x 3 dev dev  4096 Feb 17 17:22 .
+drwxrwxr-x 6 dev dev  4096 Feb 17 16:55 ..
+-rw-rw-r-- 1 dev dev    21 Feb 17 17:21 app.js
+drwxrwxr-x 8 dev dev  4096 Feb 17 17:22 .git
+-rw-rw-r-- 1 dev dev 11357 Feb 17 16:55 LICENSE
+-rw-rw-r-- 1 dev dev    25 Feb 17 17:02 README.md
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push
+fatal: The current branch stag-base has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin stag-base
+
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch stag-base
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push origin stag-base 
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 218 bytes | 218.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Subhash2424lenka/git-demo.git
+   e472493..f404071  stag-base -> stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git merge fix/ui-changes-v1
+Already up to date.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout fix/ui-changes-v2
+Switched to branch 'fix/ui-changes-v2'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ vim app.js 
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -am "new addon"
+[fix/ui-changes-v2 996a2b2] new addon
+ 1 file changed, 1 insertion(+)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push origin fix/ui-changes-v2
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 271 bytes | 271.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:Subhash2424lenka/git-demo.git
+   3eb798a..996a2b2  fix/ui-changes-v2 -> fix/ui-changes-v2
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout stag-base 
+Switched to branch 'stag-base'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git merge fix/ui-changes-v2
+Auto-merging app.js
+CONFLICT (content): Merge conflict in app.js
+Automatic merge failed; fix conflicts and then commit the result.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+meld opendiff kdiff3 tkdiff xxdiff tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+Merging:
+app.js
+
+Normal merge conflict for 'app.js':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (p4merge): 
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ vim app.js
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -m "new merge"
+[stag-base 5fe4bb6] new merge
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push
+fatal: The current branch stag-base has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin stag-base
+
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push origin stag-base 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 305 bytes | 305.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:Subhash2424lenka/git-demo.git
+   f404071..5fe4bb6  stag-base -> stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch stag-base
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app.js.orig
+
+nothing added to commit but untracked files present (use "git add" to track)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ rm -rf *.orig
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch stag-base
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout fix/ui-changes-v3
+Switched to branch 'fix/ui-changes-v3'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch -m fix/ui-changes-v3 fix/ui-changes-v3-final
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch -a
+  fix/ui-changes-v1
+  fix/ui-changes-v2
+* fix/ui-changes-v3-final
+  stag-base
+  remotes/origin/fix/ui-changes-v1
+  remotes/origin/fix/ui-changes-v2
+  remotes/origin/stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git pull fix/ui-changes-v2
+fatal: 'fix/ui-changes-v2' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> fix/ui-changes-v3-final
+
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ vim app.js
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git stash
+Saved working directory and index state WIP on ui-changes-v3-final: ef9f898 new app js file
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ vim app.js
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git stash
+Saved working directory and index state WIP on ui-changes-v3-final: ef9f898 new app js file
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout fix/ui-changes-v1
+Switched to branch 'fix/ui-changes-v1'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ vim app.js 
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch fix/ui-changes-v1
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch -a
+* fix/ui-changes-v1
+  fix/ui-changes-v2
+  fix/ui-changes-v3-final
+  stag-base
+  remotes/origin/fix/ui-changes-v1
+  remotes/origin/fix/ui-changes-v2
+  remotes/origin/stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ vim app.js 
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git stash apply
+error: Your local changes to the following files would be overwritten by merge:
+	app.js
+Please commit your changes or stash them before you merge.
+Aborting
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git stash list
+stash@{0}: WIP on ui-changes-v3-final: ef9f898 new app js file
+stash@{1}: WIP on ui-changes-v3-final: ef9f898 new app js file
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git stash apply stash@{0}
+error: Your local changes to the following files would be overwritten by merge:
+	app.js
+Please commit your changes or stash them before you merge.
+Aborting
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -am "new"
+[fix/ui-changes-v1 5013bb8] new
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git stash apply stash@{0}
+Auto-merging app.js
+CONFLICT (content): Merge conflict in app.js
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+meld opendiff kdiff3 tkdiff xxdiff tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+Merging:
+app.js
+
+Normal merge conflict for 'app.js':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (p4merge): 
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -m "merge"
+[fix/ui-changes-v1 d43ffd0] merge
+ 1 file changed, 2 insertions(+)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git log --oneline --all
+d43ffd0 (HEAD -> fix/ui-changes-v1) merge
+5013bb8 new
+11beb36 (refs/stash) WIP on ui-changes-v3-final: ef9f898 new app js file
+5edf86c index on ui-changes-v3-final: ef9f898 new app js file
+5fe4bb6 (origin/stag-base, stag-base) new merge
+996a2b2 (origin/fix/ui-changes-v2, fix/ui-changes-v2) new addon
+f404071 my Testing merge
+3eb798a new data on v2
+ef9f898 (origin/fix/ui-changes-v1, fix/ui-changes-v3-final) new app js file
+e472493 new data on read me
+e3726b2 new data added
+3d46727 Initial commit
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git revert d43ffd0
+[fix/ui-changes-v1 da729cf] Revert "merge"
+ 1 file changed, 2 deletions(-)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git log --oneline --all
+da729cf (HEAD -> fix/ui-changes-v1) Revert "merge"
+d43ffd0 merge
+5013bb8 new
+11beb36 (refs/stash) WIP on ui-changes-v3-final: ef9f898 new app js file
+5edf86c index on ui-changes-v3-final: ef9f898 new app js file
+5fe4bb6 (origin/stag-base, stag-base) new merge
+996a2b2 (origin/fix/ui-changes-v2, fix/ui-changes-v2) new addon
+f404071 my Testing merge
+3eb798a new data on v2
+ef9f898 (origin/fix/ui-changes-v1, fix/ui-changes-v3-final) new app js file
+e472493 new data on read me
+e3726b2 new data added
+3d46727 Initial commit
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ vim app.js
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -am "new data add on"
+[fix/ui-changes-v1 7a916ef] new data add on
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push
+fatal: The current branch fix/ui-changes-v1 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin fix/ui-changes-v1
+
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push origin fix/ui-changes-v1
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 898 bytes | 898.00 KiB/s, done.
+Total 10 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 1 local object.
+To github.com:Subhash2424lenka/git-demo.git
+   ef9f898..7a916ef  fix/ui-changes-v1 -> fix/ui-changes-v1
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch fix/ui-changes-v1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app.js.orig
+
+nothing added to commit but untracked files present (use "git add" to track)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ rm -rf *.orig
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout stag-base 
+Switched to branch 'stag-base'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch stag-base
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout fix/ui-changes-v3
+error: pathspec 'fix/ui-changes-v3' did not match any file(s) known to git
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch -a
+  fix/ui-changes-v1
+  fix/ui-changes-v2
+  fix/ui-changes-v3-final
+* stag-base
+  remotes/origin/fix/ui-changes-v1
+  remotes/origin/fix/ui-changes-v2
+  remotes/origin/stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout fix/ui-changes-v3-final
+Switched to branch 'fix/ui-changes-v3-final'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git stash list
+stash@{0}: WIP on ui-changes-v3-final: ef9f898 new app js file
+stash@{1}: WIP on ui-changes-v3-final: ef9f898 new app js file
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git stash save
+No local changes to save
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch fix/ui-changes-v3-final
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git log --oneline --graph
+* ef9f898 (HEAD -> fix/ui-changes-v3-final) new app js file
+* e472493 new data on read me
+* e3726b2 new data added
+* 3d46727 Initial commit
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git log --oneline
+ef9f898 (HEAD -> fix/ui-changes-v3-final) new app js file
+e472493 new data on read me
+e3726b2 new data added
+3d46727 Initial commit
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout fix/ui-changes-v1
+Switched to branch 'fix/ui-changes-v1'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git log --oneline
+7a916ef (HEAD -> fix/ui-changes-v1, origin/fix/ui-changes-v1) new data add on
+da729cf Revert "merge"
+d43ffd0 merge
+5013bb8 new
+ef9f898 (fix/ui-changes-v3-final) new app js file
+e472493 new data on read me
+e3726b2 new data added
+3d46727 Initial commit
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout fix/ui-changes-v3-final
+Switched to branch 'fix/ui-changes-v3-final'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push origin fix/ui-changes-v3-final
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'fix/ui-changes-v3-final' on GitHub by visiting:
+remote:      https://github.com/Subhash2424lenka/git-demo/pull/new/fix/ui-changes-v3-final
+remote: 
+To github.com:Subhash2424lenka/git-demo.git
+ * [new branch]      fix/ui-changes-v3-final -> fix/ui-changes-v3-final
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git hist
+* 7a916ef (origin/fix/ui-changes-v1, fix/ui-changes-v1) new data add on
+* da729cf Revert "merge"
+* d43ffd0 merge
+* 5013bb8 new
+| * 11beb36 (refs/stash) WIP on ui-changes-v3-final: ef9f898 new app js file
+|/| 
+| * 5edf86c index on ui-changes-v3-final: ef9f898 new app js file
+|/  
+| *   5fe4bb6 (origin/stag-base, stag-base) new merge
+| |\  
+| | * 996a2b2 (origin/fix/ui-changes-v2, fix/ui-changes-v2) new addon
+| * | f404071 my Testing merge
+|/| | 
+| |/  
+| * 3eb798a new data on v2
+* | ef9f898 (HEAD -> fix/ui-changes-v3-final, origin/fix/ui-changes-v3-final) new app js file
+|/  
+* e472493 new data on read me
+* e3726b2 new data added
+* 3d46727 Initial commit
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git hist
+* 7a916ef (origin/fix/ui-changes-v1, fix/ui-changes-v1) new data add on
+* da729cf Revert "merge"
+* d43ffd0 merge
+* 5013bb8 new
+| * 11beb36 (refs/stash) WIP on ui-changes-v3-final: ef9f898 new app js file
+|/| 
+| * 5edf86c index on ui-changes-v3-final: ef9f898 new app js file
+|/  
+| *   5fe4bb6 (origin/stag-base, stag-base) new merge
+| |\  
+| | * 996a2b2 (origin/fix/ui-changes-v2, fix/ui-changes-v2) new addon
+| * | f404071 my Testing merge
+|/| | 
+| |/  
+| * 3eb798a new data on v2
+* | ef9f898 (HEAD -> fix/ui-changes-v3-final, origin/fix/ui-changes-v3-final) new app js file
+|/  
+* e472493 new data on read me
+* e3726b2 new data added
+* 3d46727 Initial commit
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch fix/ui-changes-v3-final
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ cd ..
+dev@dev-ThinkCentre-M93p:~/Desktop/project$ cd website/
+dev@dev-ThinkCentre-M93p:~/Desktop/project/website$ cd website/
+dev@dev-ThinkCentre-M93p:~/Desktop/project/website/website$ git status
+On branch shared
+Your branch is up to date with 'origin/shared'.
+
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/website/website$ cd ..
+dev@dev-ThinkCentre-M93p:~/Desktop/project/website$ cd ..
+dev@dev-ThinkCentre-M93p:~/Desktop/project$ cd git-demo/
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch fix/ui-changes-v3-final
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout stag-base 
+Switched to branch 'stag-base'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch stag-base
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git hist
+* 7a916ef (origin/fix/ui-changes-v1, fix/ui-changes-v1) new data add on
+* da729cf Revert "merge"
+* d43ffd0 merge
+* 5013bb8 new
+| * 11beb36 (refs/stash) WIP on ui-changes-v3-final: ef9f898 new app js file
+|/| 
+| * 5edf86c index on ui-changes-v3-final: ef9f898 new app js file
+|/  
+| *   5fe4bb6 (HEAD -> stag-base, origin/stag-base) new merge
+| |\  
+| | * 996a2b2 (origin/fix/ui-changes-v2, fix/ui-changes-v2) new addon
+| * | f404071 my Testing merge
+|/| | 
+| |/  
+| * 3eb798a new data on v2
+* | ef9f898 (origin/fix/ui-changes-v3-final, fix/ui-changes-v3-final) new app js file
+|/  
+* e472493 new data on read me
+* e3726b2 new data added
+* 3d46727 Initial commit
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git show
+commit 5fe4bb63e9e671a76df2f14d19115bf1b6acd740 (HEAD -> stag-base, origin/stag-base)
+Merge: f404071 996a2b2
+Author: UserTwo <crzogrant@gmail.com>
+Date:   Fri Feb 17 17:27:11 2023 +0530
+
+    new merge
+
+diff --cc app.js
+index 32757e8,a887d3d..9f80adc
+--- a/app.js
++++ b/app.js
+@@@ -1,1 -1,2 +1,2 @@@
+ -<h1>version two</h1>
+ -
+ +<h1>Version One</h1>
+++<h1>Version Two</h1>
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git show 3d46727
+commit 3d46727897527e7cc644528f7ad3929e21955bca
+Author: Subhash2424lenka <89234763+Subhash2424lenka@users.noreply.github.com>
+Date:   Fri Feb 17 16:54:54 2023 +0530
+
+    Initial commit
+
+diff --git a/LICENSE b/LICENSE
+new file mode 100644
+index 0000000..261eeb9
+--- /dev/null
++++ b/LICENSE
+@@ -0,0 +1,201 @@
++                                 Apache License
++                           Version 2.0, January 2004
++                        http://www.apache.org/licenses/
++
++   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
++
++   1. Definitions.
++
++      "License" shall mean the terms and conditions for use, reproduction,
++      and distribution as defined by Sections 1 through 9 of this document.
++
++      "Licensor" shall mean the copyright owner or entity authorized by
++      the copyright owner that is granting the License.
++
++      "Legal Entity" shall mean the union of the acting entity and all
++      other entities that control, are controlled by, or are under common
++      control with that entity. For the purposes of this definition,
++      "control" means (i) the power, direct or indirect, to cause the
++      direction or management of such entity, whether by contract or
++      otherwise, or (ii) ownership of fifty percent (50%) or more of the
++      outstanding shares, or (iii) beneficial ownership of such entity.
++
++      "You" (or "Your") shall mean an individual or Legal Entity
++      exercising permissions granted by this License.
++
++      "Source" form shall mean the preferred form for making modifications,
++      including but not limited to software source code, documentation
++      source, and configuration files.
++
++      "Object" form shall mean any form resulting from mechanical
++      transformation or translation of a Source form, including but
++      not limited to compiled object code, generated documentation,
++      and conversions to other media types.
++
++      "Work" shall mean the work of authorship, whether in Source or
++      Object form, made available under the License, as indicated by a
++      copyright notice that is included in or attached to the work
++      (an example is provided in the Appendix below).
++
++      "Derivative Works" shall mean any work, whether in Source or Object
++      form, that is based on (or derived from) the Work and for which the
++      editorial revisions, annotations, elaborations, or other modifications
++      represent, as a whole, an original work of authorship. For the purposes
++      of this License, Derivative Works shall not include works that remain
++      separable from, or merely link (or bind by name) to the interfaces of,
++      the Work and Derivative Works thereof.
++
++      "Contribution" shall mean any work of authorship, including
++      the original version of the Work and any modifications or additions
++      to that Work or Derivative Works thereof, that is intentionally
++      submitted to Licensor for inclusion in the Work by the copyright owner
++      or by an individual or Legal Entity authorized to submit on behalf of
++      the copyright owner. For the purposes of this definition, "submitted"
++      means any form of electronic, verbal, or written communication sent
++      to the Licensor or its representatives, including but not limited to
++      communication on electronic mailing lists, source code control systems,
++      and issue tracking systems that are managed by, or on behalf of, the
++      Licensor for the purpose of discussing and improving the Work, but
++      excluding communication that is conspicuously marked or otherwise
++      designated in writing by the copyright owner as "Not a Contribution."
++
++      "Contributor" shall mean Licensor and any individual or Legal Entity
++      on behalf of whom a Contribution has been received by Licensor and
++      subsequently incorporated within the Work.
++
++   2. Grant of Copyright License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      copyright license to reproduce, prepare Derivative Works of,
++      publicly display, publicly perform, sublicense, and distribute the
++      Work and such Derivative Works in Source or Object form.
++
++   3. Grant of Patent License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      (except as stated in this section) patent license to make, have made,
++      use, offer to sell, sell, import, and otherwise transfer the Work,
++      where such license applies only to those patent claims licensable
++      by such Contributor that are necessarily infringed by their
++      Contribution(s) alone or by combination of their Contribution(s)
++      with the Work to which such Contribution(s) was submitted. If You
++      institute patent litigation against any entity (including a
++      cross-claim or counterclaim in a lawsuit) alleging that the Work
++      or a Contribution incorporated within the Work constitutes direct
++      or contributory patent infringement, then any patent licenses
++      granted to You under this License for that Work shall terminate
++      as of the date such litigation is filed.
++
++   4. Redistribution. You may reproduce and distribute copies of the
++      Work or Derivative Works thereof in any medium, with or without
++      modifications, and in Source or Object form, provided that You
++      meet the following conditions:
++
++      (a) You must give any other recipients of the Work or
++          Derivative Works a copy of this License; and
++
++      (b) You must cause any modified files to carry prominent notices
++          stating that You changed the files; and
++
++      (c) You must retain, in the Source form of any Derivative Works
++          that You distribute, all copyright, patent, trademark, and
++          attribution notices from the Source form of the Work,
++          excluding those notices that do not pertain to any part of
++          the Derivative Works; and
++
++      (d) If the Work includes a "NOTICE" text file as part of its
++          distribution, then any Derivative Works that You distribute must
++          include a readable copy of the attribution notices contained
++          within such NOTICE file, excluding those notices that do not
++          pertain to any part of the Derivative Works, in at least one
++          of the following places: within a NOTICE text file distributed
++          as part of the Derivative Works; within the Source form or
++          documentation, if provided along with the Derivative Works; or,
++          within a display generated by the Derivative Works, if and
++          wherever such third-party notices normally appear. The contents
++          of the NOTICE file are for informational purposes only and
++          do not modify the License. You may add Your own attribution
++          notices within Derivative Works that You distribute, alongside
++          or as an addendum to the NOTICE text from the Work, provided
++          that such additional attribution notices cannot be construed
++          as modifying the License.
++
++      You may add Your own copyright statement to Your modifications and
++      may provide additional or different license terms and conditions
++      for use, reproduction, or distribution of Your modifications, or
++      for any such Derivative Works as a whole, provided Your use,
++      reproduction, and distribution of the Work otherwise complies with
++      the conditions stated in this License.
++
++   5. Submission of Contributions. Unless You explicitly state otherwise,
++      any Contribution intentionally submitted for inclusion in the Work
++      by You to the Licensor shall be under the terms and conditions of
++      this License, without any additional terms or conditions.
++      Notwithstanding the above, nothing herein shall supersede or modify
++      the terms of any separate license agreement you may have executed
++      with Licensor regarding such Contributions.
++
++   6. Trademarks. This License does not grant permission to use the trade
++      names, trademarks, service marks, or product names of the Licensor,
++      except as required for reasonable and customary use in describing the
++      origin of the Work and reproducing the content of the NOTICE file.
++
++   7. Disclaimer of Warranty. Unless required by applicable law or
++      agreed to in writing, Licensor provides the Work (and each
++      Contributor provides its Contributions) on an "AS IS" BASIS,
++      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
++      implied, including, without limitation, any warranties or conditions
++      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
++      PARTICULAR PURPOSE. You are solely responsible for determining the
++      appropriateness of using or redistributing the Work and assume any
++      risks associated with Your exercise of permissions under this License.
++
++   8. Limitation of Liability. In no event and under no legal theory,
++      whether in tort (including negligence), contract, or otherwise,
++      unless required by applicable law (such as deliberate and grossly
++      negligent acts) or agreed to in writing, shall any Contributor be
++      liable to You for damages, including any direct, indirect, special,
++      incidental, or consequential damages of any character arising as a
++      result of this License or out of the use or inability to use the
++      Work (including but not limited to damages for loss of goodwill,
++      work stoppage, computer failure or malfunction, or any and all
++      other commercial damages or losses), even if such Contributor
++      has been advised of the possibility of such damages.
++
++   9. Accepting Warranty or Additional Liability. While redistributing
++      the Work or Derivative Works thereof, You may choose to offer,
++      and charge a fee for, acceptance of support, warranty, indemnity,
++      or other liability obligations and/or rights consistent with this
++      License. However, in accepting such obligations, You may act only
++      on Your own behalf and on Your sole responsibility, not on behalf
++      of any other Contributor, and only if You agree to indemnify,
++      defend, and hold each Contributor harmless for any liability
++      incurred by, or claims asserted against, such Contributor by reason
++      of your accepting any such warranty or additional liability.
++
++   END OF TERMS AND CONDITIONS
++
++   APPENDIX: How to apply the Apache License to your work.
++
++      To apply the Apache License to your work, attach the following
++      boilerplate notice, with the fields enclosed by brackets "[]"
++      replaced with your own identifying information. (Don't include
++      the brackets!)  The text should be enclosed in the appropriate
++      comment syntax for the file format. We also recommend that a
++      file or class name and description of purpose be included on the
++      same "printed page" as the copyright notice for easier
++      identification within third-party archives.
++
++   Copyright [yyyy] [name of copyright owner]
++
++   Licensed under the Apache License, Version 2.0 (the "License");
++   you may not use this file except in compliance with the License.
++   You may obtain a copy of the License at
++
++       http://www.apache.org/licenses/LICENSE-2.0
++
++   Unless required by applicable law or agreed to in writing, software
++   distributed under the License is distributed on an "AS IS" BASIS,
++   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++   See the License for the specific language governing permissions and
++   limitations under the License.
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..55ec756
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1 @@
++# git-demo
+\ No newline at end of file
+
+[2]+  Stopped                 git show 3d46727
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git branch
+  fix/ui-changes-v1
+  fix/ui-changes-v2
+  fix/ui-changes-v3-final
+* stag-base
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git config --local --list
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=git@github.com:Subhash2424lenka/git-demo.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+user.name=UserTwo
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git config --global --list
+user.name=UserOne
+user.email=crzogrant@gmail.com
+core.editor=code --wait
+alias.hist=log --oneline --graph --decorate --all
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git show 3d46727 | grep Author
+Author: Subhash2424lenka <89234763+Subhash2424lenka@users.noreply.github.com>
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout 
+FETCH_HEAD                       origin/fix/ui-changes-v1 
+fix/ui-changes-v1                origin/fix/ui-changes-v2 
+fix/ui-changes-v2                origin/fix/ui-changes-v3-final 
+fix/ui-changes-v3-final          origin/stag-base 
+HEAD                             stag-base 
+ORIG_HEAD                        
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout fix/ui-changes-v
+fix/ui-changes-v1         fix/ui-changes-v2         fix/ui-changes-v3-final 
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git checkout fix/ui-changes-v3-final 
+Switched to branch 'fix/ui-changes-v3-final'
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git stash list
+stash@{0}: WIP on ui-changes-v3-final: ef9f898 new app js file
+stash@{1}: WIP on ui-changes-v3-final: ef9f898 new app js file
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git stash apply
+On branch fix/ui-changes-v3-final
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git commit -am "sdf"
+[fix/ui-changes-v3-final 79e175b] sdf
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push origin 
+FETCH_HEAD                       origin/fix/ui-changes-v1 
+fix/ui-changes-v1                origin/fix/ui-changes-v2 
+fix/ui-changes-v2                origin/fix/ui-changes-v3-final 
+fix/ui-changes-v3-final          origin/stag-base 
+HEAD                             stag-base 
+ORIG_HEAD                        
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git push origin fix/ui-changes-v3-final 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 267 bytes | 267.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:Subhash2424lenka/git-demo.git
+   ef9f898..79e175b  fix/ui-changes-v3-final -> fix/ui-changes-v3-final
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git stash drop
+Dropped refs/stash@{0} (11beb36b99edff33ff43329dfec50c1f8b61ca3c)
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ git status
+On branch fix/ui-changes-v3-final
+nothing to commit, working tree clean
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ SomeCommand > Somefile.txt
+SomeCommand: command not found
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ command > Somefile.txt
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ ^C
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ ^C
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ ^C
+dev@dev-ThinkCentre-M93p:~/Desktop/project/git-demo$ 
+
+
